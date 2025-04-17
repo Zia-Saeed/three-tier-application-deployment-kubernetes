@@ -16,6 +16,12 @@ A **production-ready**, cloud-native three-tier application deployed on a **Kube
 
 ## 🛠️ One-Command Deployment
 
+// frontend/src/api/index.ts
+const API_URL = "<backend-service-url>/api/accounts"; // ← Use either:
+// Option 1: Kubernetes service name (for cluster-internal communication)
+// Option 2: External URL if accessing from outside cluster
+
+
 ```bash
 # Deploy all components (in order):
 kubectl apply -f postgres/ && \
