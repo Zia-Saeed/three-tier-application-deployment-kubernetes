@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-backend-service
+  labels:
+    app: django-backend
+spec:
+  type: NodePort  # For internal access (default)
+  selector:
+    app: django-backend  # Must match the Deployment's pod labels
+  ports:
+    - protocol: TCP
+      port: 8000       # Service port (accessible inside the cluster)
+      targetPort: 8000 # Matches the containerPort in your Deployment

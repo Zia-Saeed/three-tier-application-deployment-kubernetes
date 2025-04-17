@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-frontend-service
+spec:
+  type: NodePort  # Creates an external IP (cloud providers only)
+  selector:
+    app: react-frontend
+  ports:
+    - protocol: TCP
+      port: 3000       # External port (e.g., HTTP)
+      targetPort: 3000 # Internal container port
